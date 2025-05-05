@@ -86,7 +86,7 @@
             <div class="hand second-hand"></div>
 
 
-            <div class="center" id="playButton">ᜎᜇᜓ</div>
+            <div class="center" id="playButton">Play</div>
         </div>
         <br /><br />
         <div class="unit">
@@ -141,10 +141,10 @@
         document.getElementById('playButton').addEventListener('click', function () {
             if (player.getPlayerState() == 1) {
                 player.pauseVideo();
-                this.textContent = 'ᜎᜇᜓ';
+                this.textContent = 'Play';
             } else {
                 player.playVideo();
-                this.textContent = 'ᜁᜆᜒᜄᜒᜎ᜔ ';
+                this.textContent = 'Pause ';
             }
         });
     }
