@@ -83,6 +83,8 @@
             </div>
             <div class="hand hour-hand"></div>
             <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+
 
             <div class="center" id="playButton">ᜎᜇᜓ</div>
         </div>
@@ -98,9 +100,11 @@
         const now = new Date();
         const hours = now.getHours();
         const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
 
-        const hourDeg = (hours + minutes / 60) * 15;
-        const minuteDeg = minutes * 6;
+        const hourDeg = (hours % 24 + minutes / 60) * 15;
+        const minuteDeg = (minutes + seconds / 60) * 6;
+        const secondDeg = seconds * 6;
 
         document.querySelector(
             ".hour-hand"
@@ -108,6 +112,9 @@
         document.querySelector(
             ".minute-hand"
         ).style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+        document.querySelector(
+            ".second-hand"
+        ).style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
     }
 
     setInterval(updateClock, 1000);
