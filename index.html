@@ -130,7 +130,7 @@
         player = new YT.Player('player', {
             height: '0',
             width: '0',
-            videoId: 'UScvGXpTPE',
+            videoId: 'Av10eIyOF90',
             events: {
                 'onReady': onPlayerReady
             }
@@ -141,10 +141,10 @@
         document.getElementById('playButton').addEventListener('click', function () {
             if (player.getPlayerState() == 1) {
                 player.pauseVideo();
-                this.textContent = 'ᜎᜇᜓ';
+                this.textContent = 'PLAY';
             } else {
                 player.playVideo();
-                this.textContent = 'ᜁᜆᜒᜄᜒᜎ᜔ ';
+                this.textContent = 'PAUSE';
             }
         });
     }
