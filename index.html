@@ -14,7 +14,7 @@
     <div class="clock-container">
         <div class="title">
             <h2><b>ᜆᜎᜆᜃᜇᜈ᜔ ᜅ᜔ ᜂᜇᜐ᜔ ᜅᜌᜓᜈ᜔</b></h2>
-                <p>(ᜀᜇᜏ᜔ ᜅ᜔ ᜏᜎᜅ᜔ ᜄᜏ)</p>
+                <p>(Talatakdaan ng Gawain Ngayong Araw)</p>
         </div>
         <br />
 
@@ -61,7 +61,7 @@
 
             <div class="label" style="--i: 23; --label-offset: -90px; --label-rotation: 15deg;">ᜂᜇᜐ᜔ ᜅ᜔ ᜆᜓᜎᜓᜄ᜔</div>
             <div class="label" style="--i: 5; --label-offset: -120px; --label-rotation: -79deg;">ᜂᜋᜄ</div>
-            <div class="label" style="--i: 7.5; --label-offset: -70px; --label-rotation: -95deg;">ᜋᜄᜎᜇᜓ ᜅ᜔ ᜎᜇᜓ</div>
+            <div class="label" style="--i: 7.5; --label-offset: -70px; --label-rotation: -85deg;">ᜋᜄᜎᜇᜓ ᜅ᜔ ᜎᜇᜓ</div>
             <div class="label" style="--i: 11.1; --label-offset: -80px; --label-rotation: -110deg;">ᜏᜎᜅ᜔ ᜎᜋᜈ᜔</div>
             <div class="label" style="--i: 12.8; --label-offset: -100px; --label-rotation: -109deg;">ᜆᜅ᜔ᜑᜎᜒᜀᜈ᜔</div>
             <div class="label" style="--i: 15; --label-offset: -125px; --label-rotation: 67deg;">ᜋᜈᜍᜓᜇ ᜅ᜔ ᜆᜃᜋ</div>
@@ -86,12 +86,12 @@
             <div class="hand second-hand"></div>
 
 
-            <div class="center" id="playButton">Play</div>
+            <div class="center" id="playButton">Tugtug</div>
         </div>
         <br /><br />
         <div class="unit">
-            Unit<br />
-            DAY HOUR MINUTE
+            Yunit<br />
+            ORAS MINUTO SIGUNDO
         </div>
     </div>
 </body>
@@ -141,10 +141,10 @@
         document.getElementById('playButton').addEventListener('click', function () {
             if (player.getPlayerState() == 1) {
                 player.pauseVideo();
-                this.textContent = 'Play';
+                this.textContent = 'Tugtug';
             } else {
                 player.playVideo();
-                this.textContent = 'Pause ';
+                this.textContent = 'Hinto';
             }
         });
     }
