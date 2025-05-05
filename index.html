@@ -83,28 +83,24 @@
             </div>
             <div class="hand hour-hand"></div>
             <div class="hand minute-hand"></div>
-            <div class="hand second-hand"></div>
 
             <div class="center" id="playButton">ᜎᜇᜓ</div>
         </div>
         <br /><br />
         <div class="unit">
             Unit<br />
-            HOUR MINUTE SECOND
+            DAY HOUR MINUTE
         </div>
     </div>
 </body>
-
 <script>
     function updateClock() {
         const now = new Date();
         const hours = now.getHours();
         const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
 
-        const hourDeg = (hours % 24 + minutes / 60) * 15;
-        const minuteDeg = (minutes + seconds / 60) * 6;
-        const secondDeg = seconds * 6;
+        const hourDeg = (hours + minutes / 60) * 15;
+        const minuteDeg = minutes * 6;
 
         document.querySelector(
             ".hour-hand"
@@ -112,9 +108,6 @@
         document.querySelector(
             ".minute-hand"
         ).style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
-        document.querySelector(
-            ".second-hand"
-        ).style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
     }
 
     setInterval(updateClock, 1000);
@@ -126,12 +119,11 @@
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
     var player;
-
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            height: '360', // Adjusted height
-            width: '640',  // Adjusted width
-            videoId: 'UScvGXpTPE', // Ensure this is a valid video ID
+            height: '0',
+            width: '0',
+            videoId: 'KlxdWb2bcSA',
             events: {
                 'onReady': onPlayerReady
             }
@@ -140,7 +132,7 @@
 
     function onPlayerReady(event) {
         document.getElementById('playButton').addEventListener('click', function () {
-            if (player.getPlayerState() === YT.PlayerState.PLAYING) { // Use YT.PlayerState.PLAYING
+            if (player.getPlayerState() == 1) {
                 player.pauseVideo();
                 this.textContent = 'ᜎᜇᜓ';
             } else {
